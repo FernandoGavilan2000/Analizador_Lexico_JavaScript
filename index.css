@@ -210,3 +210,23 @@ li {
 	text-align: right;
 	font-weight: bold;
 }
+
+@media (min-width: 50px) and (max-width: 700px) {
+	.Analizador_Contenedor_Principal {
+		width: 98%;
+		flex-direction: column;
+		height: auto;
+		border-radius: 0px;
+	}
+	.Analizador_Contenedor_MainResults {
+		width: 100%;
+		padding: 2px 0px;
+		border-radius: 0px;
+		color: #ffffff;
+	}
+	.Analizador_Contenedor_TextInput {
+		width: 100%;
+		padding: 2px;
+		border-radius: 0px;
+	}
+}

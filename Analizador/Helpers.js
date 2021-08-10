@@ -5,7 +5,60 @@ import {
 	simbolosEspeciales,
 	delimitadorSingle,
 	reservadas,
+	Reservadas,
 } from './Arrays.js';
+
+export const WhoIsPalabraR_M = (character) => {
+	let NameToken = '';
+	switch (character) {
+		case Reservadas[0]:
+			NameToken = ListTokens.token_importar;
+			break;
+		case Reservadas[1]:
+			NameToken = ListTokens.token_delete;
+			break;
+		case Reservadas[2]:
+			NameToken = ListTokens.token_if;
+			break;
+		case Reservadas[3]:
+			NameToken = ListTokens.token_then;
+			break;
+		case Reservadas[4]:
+			NameToken = ListTokens.token_else;
+			break;
+		case Reservadas[5]:
+			NameToken = ListTokens.token_for;
+			break;
+		case Reservadas[6]:
+			NameToken = ListTokens.token_while;
+			break;
+
+		case Reservadas[7]:
+			NameToken = ListTokens.token_switch;
+			break;
+		case Reservadas[8]:
+			NameToken = ListTokens.token_inrange;
+			break;
+		case Reservadas[9]:
+			NameToken = ListTokens.token_false;
+			break;
+		case Reservadas[10]:
+			NameToken = ListTokens.token_true;
+			break;
+		case Reservadas[11]:
+			NameToken = ListTokens.token_imprimir;
+			break;
+		case Reservadas[12]:
+			NameToken = ListTokens.token_var;
+			break;
+		case Reservadas[13]:
+			NameToken = ListTokens.token_const;
+			break;
+		default:
+			break;
+	}
+	return NameToken;
+};
 
 export const WhoIsReservedWord = (word) => {
 	let NameToken = '';

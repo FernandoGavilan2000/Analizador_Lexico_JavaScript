@@ -10,6 +10,7 @@ import {
 	Minusculas,
 	delimitadorSingle,
 	reservadas,
+	Reservadas,
 } from './Arrays.js';
 
 import {
@@ -18,6 +19,7 @@ import {
 	WhoIsSimboloEspec,
 	WhoIsDelimitador,
 	WhoIsReservedWord,
+	WhoIsPalabraR_M,
 } from './Helpers.js';
 
 export const Escaner = (textoUI) => {
@@ -33,6 +35,10 @@ export const Escaner = (textoUI) => {
 	let reserved = '';
 	//let chart = '';
 
+	let arrprv = [];
+	let psb_rsrvd = '';
+	let err_p_rsrvd = [];
+
 	const addArrayToken = (TokenObject) => {
 		arrayTokens.push(TokenObject);
 		state = 0;
@@ -43,6 +49,12 @@ export const Escaner = (textoUI) => {
 		let chart = input_text[index];
 		switch (state) {
 			case 0:
+				for (let p_reservada = 0; p_reservada < Reservadas.length; p_reservada++) {
+					if (chart === Reservadas[p_reservada][0]) {
+						arrprv.push(p_reservada);
+						console.log(arrprv);
+					}
+				}
 				if (numbers.includes(chart)) {
 					state = 27;
 					auxlex += chart;
@@ -90,6 +102,13 @@ export const Escaner = (textoUI) => {
 							addArrayToken(new Token(infoNext.nameToken, ListCastegory.Operadores, chart));
 						}
 					}
+				} else if (arrprv.length !== 0 || psb_rsrvd !== '') {
+					if (psb_rsrvd === '') {
+						psb_rsrvd += chart;
+						state = 1;
+					} else {
+						state = 1;
+					}
 				} else {
 					if (chart == '!' && input_text.length - 1) {
 						console.info('SE TERMINO EL PROCESO DEL ANALIZADOR');
@@ -100,6 +119,43 @@ export const Escaner = (textoUI) => {
 				}
 				break;
 
+			case 1:
+				if (Minusculas.includes(chart)) {
+					psb_rsrvd += chart;
+					arrprv = [];
+					console.log(psb_rsrvd);
+					if (Reservadas.includes(psb_rsrvd)) {
+						let NameTkn = WhoIsPalabraR_M(psb_rsrvd);
+						addArrayToken(new Token(NameTkn, ListCastegory.PalabrasReservadas, psb_rsrvd));
+						psb_rsrvd = '';
+						auxlex = '';
+						arrprv = [];
+						console.log('agredado');
+					} else {
+						for (let p_rsvd = 0; p_rsvd < Reservadas.length; p_rsvd++) {
+							if (psb_rsrvd.indexOf(Reservadas[p_rsvd]) !== -1) {
+								let restante = psb_rsrvd.replace(Reservadas[p_rsvd], '');
+								let utilizado = Reservadas[p_rsvd];
+								let NameTkn = WhoIsPalabraR_M(utilizado);
+								addArrayToken(new Token(NameTkn, ListCastegory.PalabrasReservadas, utilizado));
+								psb_rsrvd = '';
+								auxlex = '';
+								arrprv = [];
+								index--;
+								err_p_rsrvd.push(restante);
+								//console.log(err_p_rsrvd)
+								//console.error('La palabra reservada:', restante, 'no existe')
+							}
+						}
+						state = 1;
+					}
+				} else {
+					state = 0;
+					index--;
+					psb_rsrvd = '';
+				}
+
+				break;
 			case 32:
 				if (chart !== '"') {
 					state = 34;
