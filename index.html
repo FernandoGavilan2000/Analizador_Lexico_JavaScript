@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Analizador Lexico Grupo2</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="index.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<!-- body -->
+
+<body class="bodycontainer">
+    <!-- loader  -->
+    <div class="loader_bg">
+        <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+    </div>
+    <!-- end loader -->
+    <!-- header -->
+    <header>
+        <!-- header inner -->
+        <div class="header-top">
+            <div class="header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                            <div class="full">
+                                <div class="center-desk">
+                                    <div class="logo">
+                                        <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                            <div class="menu-area">
+                                <div class="limit-box">
+                                    <nav class="main-menu">
+                                        <ul class="menu-area-main">
+                                            <li class="active"> <a href="index.html">Home</a> </li>
+                                            <li> <a href="./Pages/Cards.html">Componentes</a> </li>
+                                            <li> <a href="#">Reglas Gramaticales</a> </li>
+                                            <li> <a href="#footer">About us</a> </li>
+                                           
+                                        
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end header inner -->
+
+            <!-- end header -->
+            <section class="slider_section">
+                <div class="banner_main">
+
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
+                                <div class="text-bg">
+                                    <h1>Proyecto<br> <strong class="b_bold">Analizador Léxico</strong></h1>
+                                    <span>Bienvenidos, a nuestro proyecto del Curso de Compiladores, le recomendamos empezar por conocer un poco de nuestro lenguaje de programacion propuesto:</span>
+                                    <a href="./Pages/Cards.html">Componentes</a> <a href="#">Reglas</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="text-img">
+                                    <figure><img src="images/robot_portada.png"/></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </section>
+        </div>
+        </div>
+    </header>
+    <!-- about  -->
+    <div id="about" class="about">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12">
+                    <div class="about-box">
+                        <h3>About:</h3>
+                        <span>Analizador Lexico</span>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, aIt is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, aIt is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of lettersdistracted by the readable distracted by the readable , a</p>
+                        <a href="#">read more</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- end abouts -->
+
+
+    <div class="Analizador_background">
+        <div class="Analizador_Contenedor_Principal">
+            <div class="Analizador_Contenedor_MainResults">
+                <div class="Analizador_Contenedor_gridResults">
+                    <div class="Analizador_Contenedor_grid_children"><i class="fas fa-bookmark"></i><span>Tokens Encontrados :</span><h2> <span id="n_tokens">0</span> Tokens</h2></div>
+                    <div class="Analizador_Contenedor_grid_children"><i class="fas fa-meteor"></i><span>Palabras Reservadas :</span><h2><span id="PalabrasReservadas">0</span>  Tokens</h2></div>
+                    <div class="Analizador_Contenedor_grid_children"><i class="fas fa-sort-numeric-down"></i><span>Literal Numerico :</span><h2><span id="LiteralNumerico">0</span>  Tokens</h2></div>
+                    <div class="Analizador_Contenedor_grid_children"><i class="fas fa-chess-rook"></i><span>Literal Cadena :</span><h2><span id="LiteralCadena">0</span>  Tokens</h2></div>
+                    <div class="Analizador_Contenedor_grid_children"><i class="fas fa-fire"></i><span>Operadores :</span><h2><span id="Operadores">0</span>  Tokens</h2></div>
+                    <div class="Analizador_Contenedor_grid_children"><i class="fas fa-shield-alt"></i><span>Delimitadores :</span><h2><span id="Delimitadores">0</span>  Tokens</h2></div>
+                    <div class="Analizador_Contenedor_grid_children"><i class="fas fa-trophy"></i><span>Simbolos Especiales :</span><h2><span id="SimbolosEspeciales">0</span>  Tokens</h2></div>
+                    <div class="Analizador_Contenedor_grid_children"><i class="fab fa-apple"></i><span>Identificadores :</span><h2><span id="Identificadores">0</span>  Tokens</h2></div>
+                    <div class="Analizador_Contenedor_grid_children"><i class="fas fa-location-arrow"></i><span>Importadores :</span><h2><span id="Importadores">0</span>  Tokens</h2></div>
+                    <div class="Analizador_Contenedor_grid_children"><i class="fas fa-map-marker"></i><span>Comentarios :</span><h2><span id="Comentarios">0</span>  Tokens</h2></div>
+                </div>
+            </div>
+            <div class="Analizador_Contenedor_TextInput">
+                <i class="fas fa-robot"></i><span>Analizador Lexico</span> <p>8 Set,2021   08:35:12</p>
+                <hr>
+                <textarea
+				class="txt_area_form"
+				id="txt-input"
+				rows="8"
+				spellcheck="false"
+			></textarea>
+            <label><input type="checkbox" id="listener_checkbox" value="false"><span style="margin-left: 5px;">Modo Listener</span></label><br>
+            <button type="button" class="btn btn_analizar" id="btn-analizar">Analizar Codigo </button>
+            <button type="button" class="btn btn_file"  id="btn-filetxt"><i class="fas fa-file-upload"></i>Show File.txt</button>
+            <button type="button" class="btn btn_error" id="btn-clean">Limpiar Texto</button>
+            <input type="file" accept="text/plain" id="fileToLoad" style="margin-top: 10px;">
+            <hr>
+            <p class="label_version">v2.1 Beta</p>
+            </div>
+        </div>
+    </div>
+	<div class="container_Analizador">
+        
+
+
+		<table class="table">
+			<thead class="table-dark txt_headtable">
+				<tr>
+					<th>Lexema</th>
+					<th>Token</th>
+					<th>Categoria Token</th>
+				
+				</tr>
+			</thead>
+			<tbody id="table-results" class="tbody_text">
+				
+			</tbody>
+		</table>
+	</div>
+    
+
+    <!--  footer -->
+    <footer id="footer">
+        <div class="footer top_layer ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                    
+                    </div>
+                    <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 ">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="address">
+                                    <h3>INTEGRANTES :</h3>
+                                    <ul class="Menu_footer">
+										<li> <a href="#">Gavilan Hernandez Fernando</a> </li>
+                                        <li> <a href="#">Maldonado Rodriguez Jhonathan</a> </li>
+										<li> <a href="#">Almora Gonzales Wilmer</a> </li>
+                                        <li> <a href="#">Ludeña Flores Jhonn Jairo</a> </li>
+                                        <li> <a href="#">Alegria Victoria Alfredo</a> </li>
+                                    </ul>
+                                </div>
+                            </div>
+                         
+
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                        <div class="address">
+                            <h3>SECCIÓN</h3>
+                            <p>VI CICLO - "A" 2021</p>
+                            <button class="submit-btn">GRUPO 2</button>
+                            <p class="text-advice">Para una mejor experiencia usar:</p>
+							<img src="./images/chrome_logo.png" class="img_chromelogo">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <p>© 2021 <a href="https://html.design/"> Facultad de Ingeniería de Sistemas-UNICA</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+    <!-- Javascript files-->
+	<script src="./main.js" type="module"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <!-- sidebar -->
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/custom.js"></script>
+    
+</body>
+
+</html>
