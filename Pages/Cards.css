@@ -113,6 +113,25 @@ body .container .card:nth-child(11) .box .content a {
 body .container .card:nth-child(12) .box .content a {
 	background: #23c186;
 }
+body .container .card:nth-child(13) .box .content a {
+	background: #2196f3;
+}
+
+body .container .card:nth-child(14) .box .content a {
+	background: #e91e63;
+}
+
+body .container .card:nth-child(15) .box .content a {
+	background: #23c186;
+}
+
+body .container .card:nth-child(16) .box .content a {
+	background: #2196f3;
+}
+
+body .container .card:nth-child(n + 17):nth-child(-n + 24) .box .content a {
+	background: #f9fc73;
+}
 
 body .container .card .box {
 	position: absolute;
@@ -170,6 +189,7 @@ body .container .card .box .content h3 {
 
 body .container .card .box .content p {
 	font-size: 1rem;
+	margin: 0px 5px;
 	font-weight: 300;
 	color: rgba(255, 255, 255, 0.9);
 	z-index: 1;

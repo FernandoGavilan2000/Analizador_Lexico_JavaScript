@@ -365,31 +365,7 @@
 				</div>
 			</div>
 			
-						<div class="card">
-				<div class="box">
-					<div class="content">
-						<h2>13</h2>
-                        <h3>Delimitador<pre>&lt;comilla_doble&gt;<pre></h3>
-						<p>
-                            Secuencia de caracteres :
-						</p>
-						<a href="#"><pre> " </pre></a>
-					</div>
-				</div>
-			</div>
-			
-			<div class="card">
-				<div class="box">
-					<div class="content">
-						<h2>14</h2>
-                        <h3>Delimitador<pre>&lt;comilla_simple&gt;<pre></h3>
-						<p>
-                            Secuencia de caracteres :
-						</p>
-						<a href="#"><pre> ' </pre></a>
-					</div>
-				</div>
-			</div>
+					
 			
 				</div>
 		<div class="container">
@@ -524,12 +500,9 @@
 						<h2>01</h2>
                         <h3>Identificadores<pre>&lt;identificador&gt;<pre></h3>
 						<p>
-                            Secuencia de caracteres alfabéticos,
-distintos a las palabras reservadas, que deben de empezar
-con una letra mayúscula y el resto en minúsculas, con la
-opción de agregar dígitos.:
+                            Secuencia de caracteres alfabéticos, sin palabras reservadas, que deben de empezar con una letra mayúscula y el resto en minúsculas o dígitos:
 						</p>
-						<a href="#"><pre></pre></a>
+						<a href="#"><pre>Edad1</pre></a>
 					</div>
 				</div>
 			</div>
@@ -537,13 +510,11 @@ opción de agregar dígitos.:
 				<div class="box">
 					<div class="content">
 						<h2>02</h2>
-                        <h3>Identificadores<pre>&lt;importador&gt;<pre></h3>
+                        <h3>Importadores<pre>&lt;importador&gt;<pre></h3>
 						<p>
-                             Secuencia de caracteres alfabéticos
-distintos a las palabras reservadas, que deben ser escritos
-en mayúsculas.:
+                             Secuencia de caracteres alfabéticos distintos a las palabras reservadas, que deben ser escritos en mayúsculas :
 						</p>
-						<a href="#"><pre></pre></a>
+						<a href="#"><pre>TIMER</pre></a>
 					</div>
 				</div>
 			</div>
@@ -561,7 +532,7 @@ en mayúsculas.:
 dobles.
 
 						</p>
-						<a href="#"><pre></pre></a>
+						<a href="#"><pre>"Cadena"</pre></a>
 					</div>
 				</div>
 			</div>
@@ -575,7 +546,7 @@ dobles.
 comillas simples.
 
 						</p>
-						<a href="#"><pre></pre></a>
+						<a href="#"><pre>'CadenaDebil'</pre></a>
 					</div>
 				</div>
 			</div>
@@ -585,10 +556,11 @@ comillas simples.
 						<h2>03</h2>
                         <h3>Literales<pre>&lt;entero&gt;<pre></h3>
 						<p>
-                             Secuencia de dígitos.
-
+                             Secuencia de dígitos. Ejem:
 						</p>
-						<a href="#"><pre></pre></a>
+						<a href="#"><pre>1</pre></a>
+						<a href="#"><pre>10</pre></a>
+						<a href="#"><pre>1234</pre></a>
 					</div>
 				</div>
 			</div>
@@ -600,7 +572,7 @@ comillas simples.
 				<div class="box">
 					<div class="content">
 						<h2>01</h2>
-                        <h3>Comentarios<pre>&lt;comentario_cerrado&gt;<pre></h3>
+                        <h3>Comentarios<pre>&lt;c_cerrado&gt;<pre></h3>
 						<p>
                              Secuencia de caracteres que deben ir
 encerrados entre almohadillas.
@@ -614,7 +586,7 @@ encerrados entre almohadillas.
 				<div class="box">
 					<div class="content">
 						<h2>02</h2>
-                        <h3>comentarios<pre>&lt;comentario_abierto&gt;<pre></h3>
+                        <h3>comentarios<pre>&lt;c_abierto&gt;<pre></h3>
 						<p>
                              Secuencia de caracteres que tienen como
 comienzo una almohadilla. 
@@ -628,13 +600,13 @@ comienzo una almohadilla.
 				<div class="box">
 					<div class="content">
 						<h2>03</h2>
-                        <h3>Comentarios<pre>&lt;comentario_importacion&gt;<pre></h3>
+                        <h3>Comentarios<pre>&lt;c_importacion&gt;<pre></h3>
 						<p>
                              Secuencia de caracteres que deben ir
-encerrados entre dos piples. 
+encerrados entre el simbolo de porcentaje. 
 
 						</p>
-						<a href="#"><pre>&lt;&lt;Se Importo Timer&gt;&gt;</pre></a>
+						<a href="#"><pre>% Se Importo Timer %</pre></a>
 					</div>
 				</div>
 			</div>
@@ -642,13 +614,12 @@ encerrados entre dos piples.
 				<div class="box">
 					<div class="content">
 						<h2>04</h2>
-                        <h3>Comentarios<pre>&lt;comentario_procedimiento&gt;<pre></h3>
+                        <h3>Comentarios<pre>&lt;c_procedimiento&gt;<pre></h3>
 						<p>
-                             Secuencia de caracteres que deben
-ir encerrados entre dos guion doble. 
+                             Secuencia de caracteres que deben ir encerrados entre ^
 
 						</p>
-						<a href="#"><pre>-- 1.Declaramos If --</pre></a>
+						<a href="#"><pre> ^ 1.Declaramos If ^</pre></a>
 					</div>
 				</div>
 			</div>
@@ -656,13 +627,12 @@ ir encerrados entre dos guion doble.
 				<div class="box">
 					<div class="content">
 						<h2>05</h2>
-                        <h3>Comentarios<pre>&lt;comentario_error&gt;<pre></h3>
+                        <h3>Comentarios<pre>&lt;c_error&gt;<pre></h3>
 						<p>
-                              Secuencia de caracteres que tienen como
-comienzo una arroba. 
+                              Secuencia de caracteres que deben ir encerrados entre arrobas. 
 
 						</p>
-						<a href="#"><pre>@Aqui hay un error</pre></a>
+						<a href="#"><pre>@Aqui hay un error@</pre></a>
 					</div>
 				</div>
 			</div>
