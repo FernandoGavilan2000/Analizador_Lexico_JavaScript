@@ -24,7 +24,7 @@ import {
 
 export const Escaner = (textoUI) => {
 	//Eliminar los comentarios --> ????
-	const cleaned_text = textoUI.replace(/\s/g, ''); //Limpiar texto sin espacios
+	const cleaned_text = textoUI.replace(/\s/g, ''); //Limpiar
 
 	//console.log(cleaned_text);
 	let input_text = cleaned_text + '!';
@@ -66,6 +66,22 @@ export const Escaner = (textoUI) => {
 					auxlex += chart;
 				} else if (chart === '"') {
 					state = 32;
+					auxlex += chart;
+				} else if (chart === '≡') {
+					//comentario cerrado
+					state = 37;
+					auxlex += chart;
+				} else if (chart === '%') {
+					//comentario de importacion
+					state = 39;
+					auxlex += chart;
+				} else if (chart === '^') {
+					//comentario de procedimiento
+					state = 40;
+					auxlex += chart;
+				} else if (chart === 'Ω') {
+					//comentario de error
+					state = 41;
 					auxlex += chart;
 				} else if (delimitadorSingle.includes(chart)) {
 					//Verificar que token encajo
@@ -143,8 +159,6 @@ export const Escaner = (textoUI) => {
 								arrprv = [];
 								index--;
 								err_p_rsrvd.push(restante);
-								//console.log(err_p_rsrvd)
-								//console.error('La palabra reservada:', restante, 'no existe')
 							}
 						}
 						state = 1;
@@ -163,7 +177,6 @@ export const Escaner = (textoUI) => {
 				} else if (chart === '"') {
 					auxlex += chart;
 					addArrayToken(new Token(ListTokens.token_cadena, ListCastegory.LiteralCadena, auxlex));
-					//Ya no tenemos que hacer index-1
 				} else if (chart === '!') {
 					console.error('NUNCA SE CERRO LA CADENA');
 				}
@@ -176,11 +189,10 @@ export const Escaner = (textoUI) => {
 				} else if (chart === '"') {
 					auxlex += chart;
 					addArrayToken(new Token(ListTokens.token_cadena, ListCastegory.LiteralCadena, auxlex));
-					//Ya no tenemos que hacer index-1
 				} else if (chart === '!') {
 					console.error('NUNCA SE CERRO LA CADENA');
 				}
-				//Un else ????
+
 				break;
 			case 2:
 				if (Mayusculas.includes(chart)) {
@@ -215,11 +227,10 @@ export const Escaner = (textoUI) => {
 				} else if (chart === "'") {
 					auxlex += chart;
 					addArrayToken(new Token(ListTokens.token_cadena_debil, ListCastegory.LiteralCadena, auxlex));
-					//Ya no tenemos que hacer index-1
 				} else if (chart === '!') {
 					console.error('NUNCA SE CERRO LA CADENA DEBIL');
 				}
-				//Un else ????
+
 				break;
 			case 36:
 				if (Mayusculas.includes(chart)) {
@@ -248,8 +259,6 @@ export const Escaner = (textoUI) => {
 							state = 26;
 						}
 					}
-					//state = 26;
-					//auxlex += chart;
 				} else {
 					addArrayToken(new Token(ListTokens.token_identificador, ListCastegory.Identificadores, auxlex));
 					index -= 1;
@@ -263,6 +272,47 @@ export const Escaner = (textoUI) => {
 				} else {
 					addArrayToken(new Token(ListTokens.token_entero, ListCastegory.LiteralNumerico, auxlex));
 					index -= 1;
+				}
+				break;
+
+			//comentario-comentario cerrado
+			case 37:
+				if (chart !== '≡') {
+					state = 37;
+					auxlex += chart;
+				} else {
+					auxlex += chart;
+					addArrayToken(new Token(ListTokens.token_c_cerrado, ListCastegory.Comentarios, auxlex));
+				}
+				break;
+			//comentario-comentario de importacion
+			case 39:
+				if (chart !== '%') {
+					state = 39;
+					auxlex += chart;
+				} else {
+					auxlex += chart;
+					addArrayToken(new Token(ListTokens.token_c_importacion, ListCastegory.Comentarios, auxlex));
+				}
+				break;
+			//comentario-comentario de procedimiento
+			case 40:
+				if (chart !== '^') {
+					state = 40;
+					auxlex += chart;
+				} else {
+					auxlex += chart;
+					addArrayToken(new Token(ListTokens.token_c_procedimiento, ListCastegory.Comentarios, auxlex));
+				}
+				break;
+			//comentario-comentario de error
+			case 41:
+				if (chart !== 'Ω') {
+					state = 41;
+					auxlex += chart;
+				} else {
+					auxlex += chart;
+					addArrayToken(new Token(ListTokens.token_c_error, ListCastegory.Comentarios, auxlex));
 				}
 				break;
 			default:

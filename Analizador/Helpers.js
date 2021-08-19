@@ -279,6 +279,12 @@ export const WhoIsSimboloEspec = (character) => {
 		case simbolosEspeciales[9]:
 			NameToken = ListTokens.token_almohadilla;
 			break;
+		case simbolosEspeciales[10]:
+			NameToken = ListTokens.token_star;
+			break;
+		case simbolosEspeciales[11]:
+			NameToken = ListTokens.token_copyright;
+			break;
 		default:
 			break;
 	}

@@ -58,6 +58,8 @@ export const ListTokens = {
 	token_o_circulo: 'o_circulo',
 	token_almohadilla: 'almohadilla',
 	token_arroba: 'arroba',
+	token_star: 'star',
+	token_copyright: 'copyright',
 
 	//Identificadores e Importadores
 	token_identificador: 'identificador',
@@ -70,4 +72,11 @@ export const ListTokens = {
 
 	//TokenError:
 	token_error: 'error',
+
+	//Comentarios
+	token_c_cerrado: 'comentario_cerrado',
+	token_c_abierto: 'comentario_abierto',
+	token_c_importacion: 'comentario_importacion',
+	token_c_procedimiento: 'comentario_procedimiento',
+	token_c_error: 'comentario_error',
 };
