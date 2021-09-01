@@ -11,3 +11,5 @@ El **Código de este Proyecto** es **Libre** para toda persona, grupo, organizac
 Le recomendamos empezar por conocer un poco de nuestro lenguaje de programación propuesto:
 <img src="./images/componentes1.png">
 <img src="./images/componentes2.png">
+
+<iframe src="./Pages/componentes.pdf" width="100%" height="900px" frameborder="0"></iframe>
