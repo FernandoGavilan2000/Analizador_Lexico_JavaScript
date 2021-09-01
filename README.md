@@ -12,4 +12,4 @@ Le recomendamos empezar por conocer un poco de nuestro lenguaje de programación
 <img src="./images/componentes1.png">
 <img src="./images/componentes2.png">
 
-<iframe src="./Pages/componentes.pdf" width="100%" height="900px" frameborder="0"></iframe>
+<object data="./Pages/componentes.pdf" type="application/pdf" width="100%"></object>
